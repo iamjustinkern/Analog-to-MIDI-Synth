@@ -1,0 +1,4 @@
+# Ignore JUCE build files
+Builds/
+.DS_Store
+
