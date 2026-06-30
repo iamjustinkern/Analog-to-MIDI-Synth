@@ -10,7 +10,7 @@ Bela:
 The Bela board first reads in the audio buffer from the mic input. From there, it performs
 the envelope-follower calculation to determine an appropriate threshold for activating
 the OSC message. When computing the Yin algorithm, it uses a 2048-sample window so that it 
-has time to run. From there, I make copies of the calculated envelope window
+has time to run. From there, it makes copies of the calculated envelope window
 buffer. These copies are used by the threads in the worker function. The worker function
 is what calculates the frequency using the Yin algorithm. If the envelope meets the
 threshold and the frequency is not 0, the MIDI note/velocity is calculated and sent over
@@ -26,10 +26,10 @@ level into a thread-safe variable. Along with that, a thread-safe flag is used i
 the process block to signal that its ok to trigger the note-on or note-off function of the
 ADSR class. This kind of thread safety is necessary for this project since the audio
 thread is working independently from the network one. Using atomic variables will
-prevent data races. From there, in the process block, we load in the type of waveform
-we want to have generated. The user can choose among Sine, Sawtooth, and Triangle
+prevent data races. From there, in the process block, it loads in the type of waveform
+that was selected. The user can choose among Sine, Sawtooth, and Triangle
 waves in the GUI. This information is transferred over to the process block via the
-AudioProcessorValueTree class. From there, it stores the frequency and level we
+AudioProcessorValueTree class. From there, it stores the frequency and level it
 received over the network into local variables and calculates the phase delta. Based on
 the waveform, it calculates the current sample differently in a phase accumulator. Once
 the wave for the sample is calculated, the buffer gets processed by the ADSR object.
