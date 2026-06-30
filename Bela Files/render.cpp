@@ -1,5 +1,5 @@
 // Author: Justin Kern
-// MUT 431
+
 
 
 #include <Bela.h>
