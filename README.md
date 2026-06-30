@@ -35,5 +35,5 @@ the waveform, it calculates the current sample differently in a phase accumulato
 the wave for the sample is calculated, the buffer gets processed by the ADSR object.
 The ADSR object processes the buffer based on the attack, decay, sustain, and release
 parameters that were loaded in from the GUI. After the ADSR object processes the
-buffer, the buffer is then processed by my low-pass filter class. This class has two
+buffer, the buffer is then processed by the low-pass filter class. This class has two
 parameters controlled by the GUI, namely the cutoff frequency and the resonance.
